@@ -63,6 +63,9 @@ The current design assumes there exists some remote service able to answer, give
 **Other comments**
 - Communication with mysql database 
 
+### Implementation
+`spring-security` was selected given its convenient defaults to protect against common security risks. Also, it allows a relatively simple customization as done in this case for implementing token authentication. 
+
 ## Used technologies
 - Java11
 - Spring boot & Spring security
@@ -70,9 +73,6 @@ The current design assumes there exists some remote service able to answer, give
 - FlywayDB
 - Docker
 - Maven
-
-### Implementation
-`spring-security` was selected given its convenient defaults to protect against common security risks. Also, it allows a relatively simple customization as done in this case for implementing token authentication. 
 
 # Installation
 
