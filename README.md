@@ -27,15 +27,15 @@ However, the conceptual benefits (loose coupling, focus on domain, testability) 
 ## Class diagram
 ![title](docs/main-components-class-diagram.png)  
 In the above diagram are showed the principal components that build the solution.
-- RecipeCrudController that exposes the application features as a REST API.
-- RecipeCrudService which is the business entry point
-- RecipeRepository modeling the storage of Recipes
-- Recipe is the principal domain class representing a recipe in our context.
-- RecipeCrudRepository which is the concrete implementation of the repository. In this case, a spring interface repository was enough.
+- `RecipeCrudController` that exposes the application features as a REST API.
+- `RecipeCrudService` which is the business entry point
+- `RecipeRepository` modeling the storage of Recipes
+- `Recipe` is the principal domain class representing a recipe in our context.
+- `RecipeCrudRepository` which is the concrete implementation of the repository. In this case, a spring interface repository was enough.
 
 Other classes not relevant for the architectural purpose were left out of this diagram.
 
-**Notes on design**
+**Notes on design**  
 Among others that might not be documented, check:  
 [Recipe comments](src/main/java/my/jmangeruga/recipes/domain/Recipe.java)  
 [RecipeCrudService#findAll() comments](src/main/java/my/jmangeruga/recipes/application/RecipeCrudService.java)
