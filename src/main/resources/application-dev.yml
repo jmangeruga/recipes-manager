@@ -1,0 +1,11 @@
+static-security:
+  tokens:
+    1234: user_id_1
+    4321: user_id_2
+    3333: 95556e6d-8558-4b6e-b463-06920c21832c
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/recipes?sslMode=REQUIRED
+    username: user
+    password: pass

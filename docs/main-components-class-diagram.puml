@@ -1,0 +1,30 @@
+@startuml
+
+package recipes {
+    package application {
+        class RecipeCrudService
+    }
+
+    package domain {
+        class Recipe
+        interface RecipeRepository
+    }
+
+    package adapter {
+        package rest {
+            class RecipeCrudController
+        }
+
+        package db {
+            interface RecipeCrudRepository
+        }
+    }
+
+    .RecipeCrudRepository ..|> .RecipeRepository
+    .RecipeCrudController --> .RecipeCrudService
+    .RecipeCrudService --> .RecipeRepository
+}
+
+hide members
+
+@enduml

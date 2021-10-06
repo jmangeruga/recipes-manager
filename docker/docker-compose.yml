@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0.26
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: recipes
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+  api:
+    image: recipes-manager:0.1-SNAPSHOT
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/recipes?sslMode=REQUIRED
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: pass
+#      SPRING_APPLICATION_JSON: '{"static-security":{"tokens":{"token1":"user1"}}}'
+      # Just for testing purposes, other valid possibilities are:
+      SPRING_APPLICATION_JSON: '{"static-security":{"tokens":{"token1":"user1", "token2":"user2"}}}'
+      # SPRING_APPLICATION_JSON: '{"static-security":{"tokens":{"aaa-bbb":"user1", "ccc-ddd":"user2"}}}'
+    ports:
+      - "8443:8443"
+    depends_on:
+      - db
